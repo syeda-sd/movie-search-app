@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation } from "react-router-dom";
 import { AnimatePresence, motion } from "framer-motion";
 import Home from "./pages/Home";
 import Favorites from "./pages/Favorites";
@@ -39,9 +39,5 @@ function AppWrapper() {
 }
 
 export default function App() {
-  return (
-    <Router>
-      <AppWrapper />
-    </Router>
-  );
+  return <AppWrapper />; // **Router removed here**
 }
