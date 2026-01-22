@@ -6,13 +6,19 @@ import MovieDetails from "./pages/MovieDetails";
 
 function AppWrapper() {
   const location = useLocation();
+
   return (
-    <AnimatePresence exitBeforeEnter>
+    <AnimatePresence mode="wait">
       <Routes location={location} key={location.pathname}>
         <Route
           path="/"
           element={
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Home />
             </motion.div>
           }
@@ -20,7 +26,12 @@ function AppWrapper() {
         <Route
           path="/favorites"
           element={
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <Favorites />
             </motion.div>
           }
@@ -28,7 +39,12 @@ function AppWrapper() {
         <Route
           path="/movie/:id"
           element={
-            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} transition={{ duration: 0.5 }}>
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.5 }}
+            >
               <MovieDetails />
             </motion.div>
           }
@@ -39,5 +55,5 @@ function AppWrapper() {
 }
 
 export default function App() {
-  return <AppWrapper />; // **Router removed here**
+  return <AppWrapper />;
 }

@@ -1,17 +1,16 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import App from "./App";
-import { BrowserRouter } from "react-router-dom";
-import "./styles/Home.css";  
-
-const isGitHub = window.location.hostname.includes("github.io");
+import { HashRouter } from "react-router-dom";
+import "./styles/Home.css";  // Tumhara CSS
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 
 root.render(
   <React.StrictMode>
-    <BrowserRouter basename={isGitHub ? "/movie-search-app" : "/"}>
+    {/* HashRouter makes GitHub Pages routing safe */}
+    <HashRouter>
       <App />
-    </BrowserRouter>
+    </HashRouter>
   </React.StrictMode>
 );
